@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+//import 'package:flutter_app/ui/pages/Welcome/welcome.dart';
+import 'package:flutter_app/ui/pages/addPage/mainSubmissionForm.dart';
 
 class HomePage extends StatelessWidget{
   @override
@@ -7,6 +9,16 @@ class HomePage extends StatelessWidget{
     return Scaffold(
       appBar: AppBar(
         title: Text("Tailor\'s Notes"),
+        actions: <Widget>[
+          FlatButton(
+            textColor: Colors.white,
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => form()));
+            },
+            child: Icon(Icons.add),
+            shape: CircleBorder(side: BorderSide(color: Colors.transparent)),
+          ),
+        ],
       ),
       body: Center(
         child: Text("No Notes To Show"),
