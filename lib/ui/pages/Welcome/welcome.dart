@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/ui/pages/home.dart';
 
 class Welcome extends StatelessWidget{
   @override
@@ -58,13 +59,16 @@ class Welcome extends StatelessWidget{
               ),
               const SizedBox(height: 30.0,),
               RaisedButton(
+                padding: EdgeInsets.symmetric(vertical: 15.0, horizontal: 30.0),
                 color: Colors.amberAccent,
                 child: Text(
                   "Continue",
                   style: new TextStyle(
                     fontSize: 20.0
                 ),),
-                onPressed: (){},
+                onPressed: (){
+                  continueToHomePage(context);
+                },
               )
             ],
           ),
@@ -73,4 +77,8 @@ class Welcome extends StatelessWidget{
     );
   }
 
+}
+
+Future continueToHomePage(context) async {
+  Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
 }
