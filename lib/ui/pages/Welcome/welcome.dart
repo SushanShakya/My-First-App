@@ -29,6 +29,33 @@ class Welcome extends StatelessWidget{
                   fontWeight: FontWeight.bold
                 ),
               ),
+              const SizedBox(height: 15.0,),
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                child: RichText(
+                  text: new TextSpan(
+                    // Note: Styles for TextSpans must be explicitly defined.
+                    // Child text spans will inherit styles from parent
+                    style: new TextStyle(
+                      fontSize: 20.0,
+                      color: Colors.black,
+                    ),
+                    children: <TextSpan>[
+                      new TextSpan(
+                          text: 'Warning !! : ',
+                          style: new TextStyle(
+                            fontWeight: FontWeight.bold
+                          )
+                      ),
+                      new TextSpan(
+                          text: 'This is the alpha version of the app. '
+                              'So if things were to go wrong, the Dev. is sorry.',
+
+                      ),
+                    ],
+                  ),
+                )
+              ),
               const SizedBox(height: 30.0,),
               RaisedButton(
                 color: Colors.amberAccent,
