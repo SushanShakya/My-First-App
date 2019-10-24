@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 
-class form extends StatelessWidget{
+class SubmissionForm extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        elevation: 0.0,
         title: Text("Add New"),
         actions: <Widget>[
           FlatButton(
