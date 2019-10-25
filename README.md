@@ -4,13 +4,7 @@ A new Flutter application meant for storing the measurements
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+This project is kind of like the starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+It is specially designed for the use of tailors where tailors 
+can store their measurement of the clothes for different Customers.

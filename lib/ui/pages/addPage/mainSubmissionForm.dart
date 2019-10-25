@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 
-class SubmissionForm extends StatelessWidget{
+class SubmissionForm extends StatefulWidget{
+  @override
+  _SubmissionFormState createState() => _SubmissionFormState();
+}
+
+class _SubmissionFormState extends State<SubmissionForm> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,7 +21,21 @@ class SubmissionForm extends StatelessWidget{
           )
         ],
       ),
+      body:
+
+      Container(
+        margin: EdgeInsets.all(18.0),
+        child: Column(
+          children: <Widget>[
+            const SizedBox(height: 30.0,),
+            TextFormField(
+              decoration: InputDecoration(
+                labelText: "Shit"
+              ),
+            )
+          ],
+        ),
+      ),
     );
   }
-
 }

@@ -67,7 +67,8 @@ class Welcome extends StatelessWidget{
                     fontSize: 20.0
                 ),),
                 onPressed: (){
-                  continueToHomePage(context);
+//                  continueToHomePage(context);
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
                 },
               )
             ],
@@ -79,6 +80,6 @@ class Welcome extends StatelessWidget{
 
 }
 
-Future continueToHomePage(context) async {
-  Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
-}
+//Future continueToHomePage(context) async {
+//  Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
+//}
