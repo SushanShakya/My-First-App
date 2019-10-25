@@ -11,7 +11,7 @@ class Welcome extends StatelessWidget{
           width: double.infinity,
           child: Column(
             children: <Widget>[
-              const SizedBox(height: kToolbarHeight),
+              const SizedBox(height: 120.0,),
               Container(
                 decoration: BoxDecoration(
                   color: Colors.white,

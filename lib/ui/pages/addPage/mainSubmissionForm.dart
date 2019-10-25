@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class form extends StatelessWidget{
+class MeasurementForm extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -14,6 +14,14 @@ class form extends StatelessWidget{
               shape: CircleBorder(side: BorderSide(color: Colors.transparent)),
           )
         ],
+      ),
+      body: new Container(
+
+        child: Column(
+          children: <Widget>[
+
+          ],
+        ),
       ),
     );
   }

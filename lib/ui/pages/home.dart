@@ -11,9 +11,9 @@ class HomePage extends StatelessWidget{
         title: Text("Tailor\'s Notes"),
         actions: <Widget>[
           FlatButton(
-            textColor: Colors.white,
+            textColor: Colors.deepPurple,
             onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => form()));
+              Navigator.push(context, MaterialPageRoute(builder: (context) => MeasurementForm()));
             },
             child: Icon(Icons.add),
             shape: CircleBorder(side: BorderSide(color: Colors.transparent)),
