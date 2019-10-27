@@ -24,6 +24,12 @@ class MyApp extends StatelessWidget{
             vertical: 15.0, horizontal: 20.0,
           )
         ),
+        inputDecorationTheme: InputDecorationTheme(
+          contentPadding: const EdgeInsets.all(18.0),
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(10.0)
+          )
+        )
       ),
       home: Welcome(),
     );

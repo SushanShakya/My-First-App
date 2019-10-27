@@ -11,7 +11,7 @@ class Welcome extends StatelessWidget{
           width: double.infinity,
           child: Column(
             children: <Widget>[
-              const SizedBox(height: 120.0,),
+              const SizedBox(height: kToolbarHeight,),
               Container(
                 decoration: BoxDecoration(
                   color: Colors.white,
@@ -34,6 +34,7 @@ class Welcome extends StatelessWidget{
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 10.0),
                 child: RichText(
+                  textAlign: TextAlign.justify,
                   text: new TextSpan(
                     // Note: Styles for TextSpans must be explicitly defined.
                     // Child text spans will inherit styles from parent
@@ -58,14 +59,17 @@ class Welcome extends StatelessWidget{
                 )
               ),
               const SizedBox(height: 30.0,),
-              RaisedButton(
+              OutlineButton(
+                highlightColor: Colors.tealAccent,
+                borderSide: BorderSide(color: Colors.lightGreenAccent),
                 padding: EdgeInsets.symmetric(vertical: 15.0, horizontal: 30.0),
-                color: Colors.amberAccent,
+                textColor: Colors.lightGreenAccent,
                 child: Text(
                   "Continue",
                   style: new TextStyle(
                     fontSize: 20.0
-                ),),
+                  ),
+                ),
                 onPressed: (){
                   continueToHomePage(context);
                 },

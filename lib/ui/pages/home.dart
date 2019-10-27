@@ -1,8 +1,36 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/ui/pages/Customer.dart';
+import 'package:flutter_app/ui/pages/Details.dart';
 //import 'package:flutter_app/ui/pages/Welcome/welcome.dart';
 import 'package:flutter_app/ui/pages/addPage/mainSubmissionForm.dart';
 
-class HomePage extends StatelessWidget{
+class HomePage extends StatefulWidget{
+  @override
+  _HomePageState createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+
+  //TextEditingController _controller = new TextEditingController();
+  List <Customer> customerList = [];
+
+  @override
+  void initState() {
+    super.initState();
+  }
+  void _addTodoItem(String name) { //copied
+    if (name.length > 0) {
+      Customer person = Customer(name: name, status: false);
+      setState(() {
+        customerList.add(person);
+      });
+    }
+  }
+
+  Future addToDo() async { //copied
+    String newToDO = await Navigator.push(context, MaterialPageRoute(builder: (context) => MeasurementForm()));
+    _addTodoItem(newToDO);
+  }
   @override
   Widget build(BuildContext context) {
 
@@ -10,20 +38,41 @@ class HomePage extends StatelessWidget{
       appBar: AppBar(
         title: Text("Tailor\'s Notes"),
         actions: <Widget>[
-          FlatButton(
-            textColor: Colors.deepPurple,
-            onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => MeasurementForm()));
-            },
-            child: Icon(Icons.add),
-            shape: CircleBorder(side: BorderSide(color: Colors.transparent)),
+          IconButton(
+            tooltip: "Add",
+            onPressed: () => addToDo(),
+            icon :Icon(Icons.add, color: Colors.red),
+
           ),
         ],
       ),
-      body: Center(
-        child: Text("No Notes To Show"),
-      ),
+      body:
+        ListView.builder(itemCount: customerList.length,itemBuilder: (context, index){
+          return Container(
+            margin: EdgeInsets.symmetric(horizontal: 8.0 , vertical: 8.0),
+            decoration: BoxDecoration(
+              color: Colors.amber,
+              borderRadius: BorderRadius.circular(10.0)
+            ),
+            padding: EdgeInsets.all(10.0),
+            child: ListTile(
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context) => ShowDetail()));
+              },
+              onLongPress: (){},
+              title: Text(
+                customerList[index].name,
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 20.0
+              ),),
+              trailing: Icon(Icons.check_circle, color: Colors.pink,),
+            ),
+          );
+        })
+//      Center(
+//        child: Text("No Notes To Show"),
+//      ),
     );
   }
-
 }
