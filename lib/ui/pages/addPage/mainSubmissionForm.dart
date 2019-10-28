@@ -47,19 +47,7 @@ class _MeasurementFormState extends State<MeasurementForm> {
         child: SingleChildScrollView(
           child: Column(
             children: <Widget>[
-//              SizedBox(
-//                width: 10.0,
-//                child: Row(
-//                  children: <Widget>[
-//                    Text("Name :"),
-//                    TextField(
-//                      decoration: InputDecoration(
-//                        hintText: "Enter Name"
-//                      ),
-//                    )
-//                  ],
-//                )
-//              ),
+              //Yes it might be a bad design but this is the only thing that came to my mind so yeah !
               const SizedBox(height: 10.0,),
               TextFormField(
                 controller: _message,

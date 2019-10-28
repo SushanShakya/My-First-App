@@ -47,34 +47,36 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
       body:
-        customerList.length > 0 ?ListView.builder(itemCount: customerList.length,itemBuilder: (context, index){
-          return Container(
-            margin: EdgeInsets.symmetric(horizontal: 8.0 , vertical: 8.0),
-            decoration: BoxDecoration(
-              color: Colors.amber,
-              borderRadius: BorderRadius.circular(10.0)
-            ),
-            padding: EdgeInsets.all(10.0),
-            child: ListTile(
-              onTap: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context) => ShowDetail()));
-              },
-              onLongPress: (){},
-              title: Text(
-                customerList[index].name,
-                style: TextStyle(
-                    color: Colors.black,
+        customerList.length > 0 ?ListView.builder(
+            itemCount: customerList.length,
+            itemBuilder: (context, index){
+              return Container(
+                margin: EdgeInsets.symmetric(horizontal: 8.0 , vertical: 8.0),
+                decoration: BoxDecoration(
+                  color: Colors.amber,
+                  borderRadius: BorderRadius.circular(10.0)
+                ),
+                padding: EdgeInsets.all(10.0),
+                child: ListTile(
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => ShowDetail()));
+                  },
+                  onLongPress: (){},
+                  title: Text(
+                    customerList[index].name,
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 20.0
+                  ),),
+                  trailing: Icon(Icons.check_circle, color: Colors.pink,),
+                ),
+              );
+            })
+                : Center(
+                  child: Text("Press (+) To Get Started", style: TextStyle(
                     fontSize: 20.0
-              ),),
-              trailing: Icon(Icons.check_circle, color: Colors.pink,),
-            ),
-          );
-        }) :
-      Center(
-        child: Text("Get Started by pressing +", style: TextStyle(
-          fontSize:
-        ),),
-      ),
+                  ),),
+                ),
     );
   }
 }
