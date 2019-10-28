@@ -47,7 +47,7 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
       body:
-        ListView.builder(itemCount: customerList.length,itemBuilder: (context, index){
+        customerList.length > 0 ?ListView.builder(itemCount: customerList.length,itemBuilder: (context, index){
           return Container(
             margin: EdgeInsets.symmetric(horizontal: 8.0 , vertical: 8.0),
             decoration: BoxDecoration(
@@ -69,10 +69,12 @@ class _HomePageState extends State<HomePage> {
               trailing: Icon(Icons.check_circle, color: Colors.pink,),
             ),
           );
-        })
-//      Center(
-//        child: Text("No Notes To Show"),
-//      ),
+        }) :
+      Center(
+        child: Text("Get Started by pressing +", style: TextStyle(
+          fontSize:
+        ),),
+      ),
     );
   }
 }

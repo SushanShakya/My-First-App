@@ -10,6 +10,7 @@ class MeasurementForm extends StatefulWidget{
 class _MeasurementFormState extends State<MeasurementForm> {
 
   List customerDetail = [];
+  List template = ['Name', 'Phone No.','smth', 'smth','smth','smth','smth','smth'];//Created a list instead of hardcoding the strings
   TextEditingController _message = new TextEditingController();
   FocusNode shit2 = new FocusNode();
   FocusNode shit3 = new FocusNode();
@@ -63,7 +64,7 @@ class _MeasurementFormState extends State<MeasurementForm> {
               TextFormField(
                 controller: _message,
                 decoration: InputDecoration(
-                      labelText: "Name:"
+                      labelText: template[0]
                   ),
                   onChanged: (String str){
                     customerDetail.add(str);
@@ -77,7 +78,7 @@ class _MeasurementFormState extends State<MeasurementForm> {
               const SizedBox(height: 10.0,),
               TextFormField(
                 decoration: InputDecoration(
-                    labelText: "Shit2"
+                    labelText: template[1]
                 ),
                 onChanged: (String str){
                   customerDetail.add(str);
@@ -91,7 +92,7 @@ class _MeasurementFormState extends State<MeasurementForm> {
               const SizedBox(height: 10.0,),
               TextFormField(
                 decoration: InputDecoration(
-                    labelText: "Shit3"
+                    labelText: template[2]
                 ),
                 onChanged: (String str){
                   customerDetail.add(str);
@@ -105,7 +106,7 @@ class _MeasurementFormState extends State<MeasurementForm> {
               const SizedBox(height: 10.0,),
               TextFormField(
                 decoration: InputDecoration(
-                    labelText: "Shit4"
+                    labelText: template[3]
                 ),
                 onChanged: (String str){
                   customerDetail.add(str);
@@ -119,7 +120,7 @@ class _MeasurementFormState extends State<MeasurementForm> {
               const SizedBox(height: 10.0,),
               TextFormField(
                 decoration: InputDecoration(
-                    labelText: "Shit5"
+                    labelText: template[4]
                 ),
                 onChanged: (String str){
                   customerDetail.add(str);
@@ -133,7 +134,7 @@ class _MeasurementFormState extends State<MeasurementForm> {
               const SizedBox(height: 10.0,),
               TextFormField(
                 decoration: InputDecoration(
-                    labelText: "Shit6"
+                    labelText: template[5]
                 ),
                 onChanged: (String str){
                   customerDetail.add(str);
@@ -147,7 +148,7 @@ class _MeasurementFormState extends State<MeasurementForm> {
               const SizedBox(height: 10.0,),
               TextFormField(
                 decoration: InputDecoration(
-                    labelText: "Shit7"
+                    labelText: template[6]
                 ),
                 onChanged: (String str){
                   customerDetail.add(str);
@@ -161,7 +162,7 @@ class _MeasurementFormState extends State<MeasurementForm> {
               const SizedBox(height: 10.0,),
               TextFormField(
                 decoration: InputDecoration(
-                    labelText: "Shit8"
+                    labelText: template[7]
                 ),
                 onChanged: (String str){
                   customerDetail.add(str);
