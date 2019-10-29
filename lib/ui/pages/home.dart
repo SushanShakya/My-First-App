@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/ui/pages/Customer.dart';
 import 'package:flutter_app/ui/pages/Details.dart';
+import 'package:flutter_app/ui/pages/InheritedWidget/NoteInherit.dart';
 //import 'package:flutter_app/ui/pages/Welcome/welcome.dart';
 import 'package:flutter_app/ui/pages/addPage/mainSubmissionForm.dart';
 
@@ -11,6 +12,7 @@ class HomePage extends StatefulWidget{
 
 class _HomePageState extends State<HomePage> {
 
+  //List<Map<String,String>> get _notes => DetailsInheritedWidget.of(context);
   //TextEditingController _controller = new TextEditingController();
   List <Customer> customerList = [];
 
@@ -59,9 +61,15 @@ class _HomePageState extends State<HomePage> {
                 padding: EdgeInsets.all(10.0),
                 child: ListTile(
                   onTap: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => ShowDetail()));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => ShowDetail()));
                   },
-                  onLongPress: (){},
+                  onLongPress: (){
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => MeasurementForm()));
+                  },
                   title: Text(
                     customerList[index].name,
                     style: TextStyle(
