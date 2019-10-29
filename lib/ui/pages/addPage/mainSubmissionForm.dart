@@ -1,17 +1,38 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/ui/pages/InheritedWidget/NoteInherit.dart';
+
+//  For Future improvements
+//enum Mode{
+//  edit,
+//  add
+//}
 
 class MeasurementForm extends StatefulWidget{
-  final String title;
-  MeasurementForm({this.title});
+
+//  final Mode _noteMode;
+//  final int index;
+//  MeasurementForm(this.index);
+//    Old Code style
+//  final String title;
+//  MeasurementForm({this.title});
   @override
   _MeasurementFormState createState() => _MeasurementFormState();
 }
 
 class _MeasurementFormState extends State<MeasurementForm> {
 
-  List customerDetail = [];
-  List template = ['Name', 'Phone No.','smth', 'smth','smth','smth','smth','smth'];//Created a list instead of hardcoding the strings
-  TextEditingController _message = new TextEditingController();
+//  Don't think will be requiring this code here
+//  List customerDetail = [];
+  List<Map<String, String>> get _notes => DetailInheritedWidget.of(context).notes;
+  List template = ['Name', 'Phone No.','Length', 'Hip', 'Height', 'Front', 'Back', 'Up'];//Created a list instead of hardcoding the strings
+  TextEditingController _name = new TextEditingController();
+  TextEditingController _phoneNo = new TextEditingController();
+  TextEditingController _length = new TextEditingController();
+  TextEditingController _hip = new TextEditingController();
+  TextEditingController _height = new TextEditingController();
+  TextEditingController _front = new TextEditingController();
+  TextEditingController _back = new TextEditingController();
+  TextEditingController _up = new TextEditingController();
   final FocusNode shit2 = new FocusNode();
   final FocusNode shit3 = new FocusNode();
   final FocusNode shit4 = new FocusNode();
@@ -20,12 +41,28 @@ class _MeasurementFormState extends State<MeasurementForm> {
   final FocusNode shit7 = new FocusNode();
   final FocusNode shit8 = new FocusNode();
 
-  @override
-  void initState() {
-    super.initState();
-    _message = TextEditingController(text: widget.title != null? widget.title: "");
-  }
+//    Old code style
 
+//  @override
+//  void initState() {
+//    super.initState();
+//    _name = TextEditingController(text: widget.title != null? widget.title: "");
+//  }
+
+
+//    For the purpose of displaying the text when edited
+//  @override
+//  void didChangeDependencies() {
+//    _name.text = _notes[widget.index]['Name'];
+//    _phoneNo.text = _notes[widget.index]['Phone No.'];
+//    _length.text = _notes[widget.index]['Length'];
+//    _hip.text = _notes[widget.index]['Hip'];
+//    _height.text = _notes[widget.index]['Height'];
+//    _front.text = _notes[widget.index]['Front'];
+//    _back.text = _notes[widget.index]['Back'];
+//    _up.text = _notes[widget.index]['Up'];
+//    super.didChangeDependencies();
+//  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,13 +73,27 @@ class _MeasurementFormState extends State<MeasurementForm> {
           FlatButton(
               textColor: Colors.black ,
               onPressed: (){
-                Navigator.pop(context, _message.text.toString());
+                /*When the "Save" button is pressed the
+                 details are added to the map*/
+                _notes.add({
+                  'Name'      :_name.text,
+                  'Phone No.' :_phoneNo.text,
+                  'Length'    :_length.text,
+                  'Hip'       :_hip.text,
+                  'Height'    :_height.text,
+                  'Front'     :_front.text,
+                  'Back'      :_back.text,
+                  'Up'        :_up.text
+                });
+                Navigator.pop(context, _name.text.toString());
               },
               child: Text("Save"),
               shape: CircleBorder(side: BorderSide(color: Colors.transparent)),
           )
         ],
       ),
+
+      //Just an Example of bad architecture but whatever
       body: new Container(
         margin: const EdgeInsets.symmetric(horizontal:18.0 ),
         child: SingleChildScrollView(
@@ -53,13 +104,10 @@ class _MeasurementFormState extends State<MeasurementForm> {
                */
               const SizedBox(height: 10.0,),
               TextFormField(
-                controller: _message,
+                controller: _name,
                 decoration: InputDecoration(
                       labelText: template[0]
                   ),
-                  onChanged: (String str){
-                    customerDetail.add(str);
-                  },
                   onEditingComplete: (){
                     FocusScope.of(context).requestFocus(shit2);
                   },
@@ -67,29 +115,27 @@ class _MeasurementFormState extends State<MeasurementForm> {
 
                 ),
               const SizedBox(height: 10.0,),
-              _Input(null, template[1], shit2, shit3),
+              _Input(_phoneNo, template[1], shit2, shit3),
               const SizedBox(height: 10.0,),
               Text("Kurtha", style: TextStyle(fontSize: 18.0),textAlign: TextAlign.left,), //UI part
               const SizedBox(height: 5.0,),
-              _Input(null, template[2], shit3, shit4),
+              _Input(_length, template[2], shit3, shit4),
               const SizedBox(height: 10.0,),
-              _Input(null, template[3], shit4, shit5),
+              _Input(_hip, template[3], shit4, shit5),
               const SizedBox(height: 10.0,),
-              _Input(null, template[4], shit5, shit6),
+              _Input(_height, template[4], shit5, shit6),
               const SizedBox(height: 10.0,),
-              _Input(null, template[5], shit6, shit7),
+              _Input(_front, template[5], shit6, shit7),
               const SizedBox(height: 10.0,),
-              _Input(null, template[6], shit7, shit8),
+              _Input(_back, template[6], shit7, shit8),
               const SizedBox(height: 10.0,),
               TextFormField(
                 decoration: InputDecoration(
                     labelText: template[7]
                 ),
-                onChanged: (String str){
-                  customerDetail.add(str);
-                },
                   focusNode: shit8,
-                  textInputAction: TextInputAction.done
+                  textInputAction: TextInputAction.done,
+                controller: _up,
               ),
               const SizedBox(height: 10.0,)
             ],

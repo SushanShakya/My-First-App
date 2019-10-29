@@ -1,8 +1,8 @@
 
+//import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:flutter_app/ui/pages/Customer.dart';
 import 'package:flutter_app/ui/pages/Details.dart';
-//import 'package:flutter_app/ui/pages/InheritedWidget/NoteInherit.dart';
+import 'package:flutter_app/ui/pages/InheritedWidget/NoteInherit.dart';
 import 'package:flutter_app/ui/pages/addPage/mainSubmissionForm.dart';
 
 class HomePage extends StatefulWidget{
@@ -12,69 +12,75 @@ class HomePage extends StatefulWidget{
 }
 
 class _HomePageState extends State<HomePage> {
-  //List<Map<String,String>> get _notes => DetailsInheritedWidget.of(context);
-  //TextEditingController _controller = new TextEditingController();
-  List <Customer> customerList = [];
+  List<Map<String, String>> get _notes => DetailInheritedWidget.of(context).notes;
 
-  void _addTodoItem(String name) { //copied
-    if (name.length > 0) {
-      Customer person = Customer(name: name, status: false);
-      setState(() {
-        customerList.add(person);
-      });
-    }
-  }
-
-  Future addToDo() async { //copied
-    String newToDO = await Navigator.push(context, MaterialPageRoute(builder: (context) => MeasurementForm()));
-    _addTodoItem(newToDO);
-  }
-  
   @override
   Widget build(BuildContext context) {
 
     return Scaffold(
       appBar: AppBar(
         elevation: 0.0,
-        title: Text("Tailor\'s Notes"),
+        title: Text("Tailor\'s Notes", style: TextStyle(fontSize: 22.0),),
         actions: <Widget>[
           IconButton(
-            onPressed: () => addToDo(),
-            icon :Icon(Icons.add, color: Colors.red),
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => MeasurementForm()));
+              },
+            icon :Icon(Icons.add, color: Colors.white),
 
           ),
         ],
       ),
       body:
-        customerList.length > 0 ?ListView.builder(
-            itemCount: customerList.length,
+        _notes.length > 0 ?
+        ListView.builder(
+            itemCount: _notes.length,
             itemBuilder: (context, index){
-              return Container(
-                margin: EdgeInsets.symmetric(horizontal: 8.0 , vertical: 8.0),
-                decoration: BoxDecoration(
-                  color: Colors.amber,
-                  borderRadius: BorderRadius.circular(10.0)
-                ),
-                padding: EdgeInsets.all(10.0),
-                child: ListTile(
-                  onTap: (){
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => ShowDetail()));
-                  },
-                  onLongPress: (){
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => MeasurementForm()));
-                  },
-                  title: Text(
-                    customerList[index].name,
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 20.0
-                  ),),
-                  trailing: Icon(Icons.check_box, color: Colors.pink,),
-                ),
+              return Column(
+                children: <Widget>[
+                  const SizedBox(height: 8.0,),
+                  GestureDetector(
+                    child: Container(
+                      margin: EdgeInsets.symmetric(horizontal: 8.0 , vertical: 4.0),
+                      decoration: BoxDecoration(
+                        color: Colors.cyan,
+                        borderRadius: BorderRadius.circular(10.0)
+                      ),
+                      padding: EdgeInsets.symmetric(vertical: 10.0),
+                      child: ListTile(
+                        onTap: (){
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => ShowDetail(index)));
+                        },
+                        onLongPress: (){
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => MeasurementForm()));
+                        },
+                        title: Column(
+                          children: <Widget>[
+                            Text(
+                              _notes[index]['Name'],
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 20.0
+                            )),
+                            Text(
+                              _notes[index]['Phone No.'],
+                              style: TextStyle(
+                                  color: Colors.grey,
+                                  fontSize: 15.0
+                              ))
+                          ],
+                        ),
+                        trailing: Icon(Icons.account_circle, color: Colors.black,),
+                      ),
+                    ),
+                  ),
+                ],
               );
             })
                 : Center(

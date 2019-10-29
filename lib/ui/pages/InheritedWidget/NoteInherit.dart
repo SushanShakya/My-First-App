@@ -1,47 +1,51 @@
-//import 'package:flutter/widgets.dart';
-//
-//class DetailsInheritedWidget extends InheritedWidget{
-//
-//  final notes = [
-//    {
-//      'Name':'',
-//      'Phone No.': '',
-//      'smth': '',
-//      'smth': '',
-//      'smth': '',
-//      'smth': '',
-//      'smth': '',
-//      'smth': ''
-//    },
-//    {
-//      'Name':'',
-//      'Phone No.': '',
-//      'smth': '',
-//      'smth': '',
-//      'smth': '',
-//      'smth': '',
-//      'smth': '',
-//      'smth': ''
-//    },
-//    {
-//      'Name':'',
-//      'Phone No.': '',
-//      'smth': '',
-//      'smth': '',
-//      'smth': '',
-//      'smth': '',
-//      'smth': '',
-//      'smth': ''
-//    }
-//  ];
-//  DetailsInheritedWidget(Widget child) : super(child: child);
-//
-//  static DetailsInheritedWidget of(BuildContext context){
-//    return (context.inheritFromWidgetOfExactType(DetailsInheritedWidget)as DetailsInheritedWidget);
-//  }
-//  @override
-//  bool updateShouldNotify(InheritedWidget oldWidget) {
-//    return oldWidget.notes != notes;
-//  }
-//
-//}
+import 'package:flutter/material.dart';
+
+class DetailInheritedWidget extends InheritedWidget{
+
+  final notes = [
+    {
+      'Name':'Sushan',
+      'Phone No.':'flsjflk',
+      'Length':'',
+      'Hip':'',
+      'Height':'',
+      'Front':'',
+      'Back':'',
+      'Up':''
+    },
+    {
+      'Name':'Sakshyam',
+      'Phone No.':'',
+      'Length':'',
+      'Hip':'',
+      'Height':'',
+      'Front':'',
+      'Back':'',
+      'Up':''
+    },
+    {
+      'Name':'LOL',
+      'Phone No.':'',
+      'Length':'',
+      'Hip':'',
+      'Height':'',
+      'Front':'',
+      'Back':'',
+      'Up':''
+    }
+
+  ];
+
+  DetailInheritedWidget(Widget child) : super(child: child);
+
+  static DetailInheritedWidget of(BuildContext context){
+    return (context.inheritFromWidgetOfExactType(DetailInheritedWidget)as DetailInheritedWidget);
+  }
+
+  @override
+  bool updateShouldNotify(DetailInheritedWidget oldWidget) {
+    return oldWidget.notes != notes;
+  }
+
+
+}
