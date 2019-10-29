@@ -1,7 +1,8 @@
-//import 'dart:math';
 
-import 'package:flutter/material.dart';
-//import 'package:flutter_app/ui/pages/CustomerNames.dart';
+import 'package:flutter_app/ui/pages/Customer.dart';
+import 'package:flutter_app/ui/pages/Details.dart';
+import 'package:flutter_app/ui/pages/InheritedWidget/NoteInherit.dart';
+//import 'package:flutter_app/ui/pages/Welcome/welcome.dart';
 import 'package:flutter_app/ui/pages/addPage/mainSubmissionForm.dart';
 
 class HomePage extends StatefulWidget{
@@ -11,18 +12,24 @@ class HomePage extends StatefulWidget{
 }
 
 class _HomePageState extends State<HomePage> {
+  //List<Map<String,String>> get _notes => DetailsInheritedWidget.of(context);
+  //TextEditingController _controller = new TextEditingController();
+  List <Customer> customerList = [];
 
-//  List <Names> _CustomerNames = [];
-//  List _RandomColors = [];
-//  var _random ;
-//
-//  @override
-//  void initState() {
-//    super.initState();
-//    _RandomColors = [Colors.brown, Colors.tealAccent, Colors.pinkAccent];
-//    _random = Random();
-//  }
+  void _addTodoItem(String name) { //copied
+    if (name.length > 0) {
+      Customer person = Customer(name: name, status: false);
+      setState(() {
+        customerList.add(person);
+      });
+    }
+  }
 
+  Future addToDo() async { //copied
+    String newToDO = await Navigator.push(context, MaterialPageRoute(builder: (context) => MeasurementForm()));
+    _addTodoItem(newToDO);
+  }
+  
   @override
   Widget build(BuildContext context) {
 
@@ -31,33 +38,50 @@ class _HomePageState extends State<HomePage> {
         elevation: 0.0,
         title: Text("Tailor\'s Notes"),
         actions: <Widget>[
-          IconButton(
-              icon: Icon(Icons.add, color: Colors.black, size: 30.0,),
-              onPressed: (){
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => SubmissionForm())
-                ); //Navigator
-              },
-          )
+          FlatButton(
+            onPressed: () => addToDo(),
+            icon :Icon(Icons.add, color: Colors.red),
+
+          ),
         ],
       ),
       body:
-      Center(
-        child: Text("No Notes To Show"),
-      ),
-//      ListView.builder(itemCount: 5,itemBuilder: (context, index){
-//        return ListTile(
-//          title: Text("index"),
-//        );
-//      }),
+        customerList.length > 0 ?ListView.builder(
+            itemCount: customerList.length,
+            itemBuilder: (context, index){
+              return Container(
+                margin: EdgeInsets.symmetric(horizontal: 8.0 , vertical: 8.0),
+                decoration: BoxDecoration(
+                  color: Colors.amber,
+                  borderRadius: BorderRadius.circular(10.0)
+                ),
+                padding: EdgeInsets.all(10.0),
+                child: ListTile(
+                  onTap: (){
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => ShowDetail()));
+                  },
+                  onLongPress: (){
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => MeasurementForm()));
+                  },
+                  title: Text(
+                    customerList[index].name,
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 20.0
+                  ),),
+                  trailing: Icon(Icons.check_circle, color: Colors.pink,),
+                ),
+              );
+            })
+                : Center(
+                  child: Text("Press (+) To Get Started", style: TextStyle(
+                    fontSize: 20.0
+                  ),),
+                ),
     );
   }
 }
-
-//Might use this part of the code later
-
-//class showPage{}
-//class editPage{}
-//class deletePage{}
-//class markDone{}

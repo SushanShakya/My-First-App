@@ -25,7 +25,6 @@ class MyApp extends StatelessWidget{
           )
         ),
         inputDecorationTheme: InputDecorationTheme(
-          contentPadding: EdgeInsets.all(18.0),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10.0)
           )
