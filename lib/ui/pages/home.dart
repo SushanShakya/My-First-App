@@ -1,8 +1,8 @@
 
+import 'package:flutter/material.dart';
 import 'package:flutter_app/ui/pages/Customer.dart';
 import 'package:flutter_app/ui/pages/Details.dart';
-import 'package:flutter_app/ui/pages/InheritedWidget/NoteInherit.dart';
-//import 'package:flutter_app/ui/pages/Welcome/welcome.dart';
+//import 'package:flutter_app/ui/pages/InheritedWidget/NoteInherit.dart';
 import 'package:flutter_app/ui/pages/addPage/mainSubmissionForm.dart';
 
 class HomePage extends StatefulWidget{
@@ -38,7 +38,7 @@ class _HomePageState extends State<HomePage> {
         elevation: 0.0,
         title: Text("Tailor\'s Notes"),
         actions: <Widget>[
-          FlatButton(
+          IconButton(
             onPressed: () => addToDo(),
             icon :Icon(Icons.add, color: Colors.red),
 
@@ -73,7 +73,7 @@ class _HomePageState extends State<HomePage> {
                         color: Colors.black,
                         fontSize: 20.0
                   ),),
-                  trailing: Icon(Icons.check_circle, color: Colors.pink,),
+                  trailing: Icon(Icons.check_box, color: Colors.pink,),
                 ),
               );
             })

@@ -48,7 +48,9 @@ class _MeasurementFormState extends State<MeasurementForm> {
         child: SingleChildScrollView(
           child: Column(
             children: <Widget>[
-              //Yes it might be a bad design but this is the only thing that came to my mind so yeah !
+              /* Remember that this design is due to the
+              difference in the first and last text form field
+               */
               const SizedBox(height: 10.0,),
               TextFormField(
                 controller: _message,
@@ -66,96 +68,18 @@ class _MeasurementFormState extends State<MeasurementForm> {
                 ),
               const SizedBox(height: 10.0,),
               _Input(null, template[1], shit2, shit3),
-//              TextFormField(
-//                decoration: InputDecoration(
-//                    labelText: template[1]
-//                ),
-//                onChanged: (String str){
-//                  customerDetail.add(str);
-//                },
-//                  onEditingComplete: (){
-//                    FocusScope.of(context).requestFocus(shit3);
-//                  },
-//                textInputAction: TextInputAction.next,
-//                  focusNode: shit2
-//              ),
               const SizedBox(height: 10.0,),
               Text("Kurtha", style: TextStyle(fontSize: 18.0),textAlign: TextAlign.left,), //UI part
               const SizedBox(height: 5.0,),
               _Input(null, template[2], shit3, shit4),
-//              TextFormField(
-//                decoration: InputDecoration(
-//                    labelText: template[2]
-//                ),
-//                onChanged: (String str){
-//                  customerDetail.add(str);
-//                },
-//                  onEditingComplete: (){
-//                    FocusScope.of(context).requestFocus(shit4);
-//                  },
-//                  focusNode: shit3,
-//                  textInputAction: TextInputAction.next
-//              ),
               const SizedBox(height: 10.0,),
               _Input(null, template[3], shit4, shit5),
-//              TextFormField(
-//                decoration: InputDecoration(
-//                    labelText: template[3]
-//                ),
-//                onChanged: (String str){
-//                  customerDetail.add(str);
-//                },
-//                  onEditingComplete: (){
-//                    FocusScope.of(context).requestFocus(shit5);
-//                  },
-//                  focusNode: shit4,
-//                  textInputAction: TextInputAction.next
-//              ),
               const SizedBox(height: 10.0,),
               _Input(null, template[4], shit5, shit6),
-//              TextFormField(
-//                decoration: InputDecoration(
-//                    labelText: template[4]
-//                ),
-//                onChanged: (String str){
-//                  customerDetail.add(str);
-//                },
-//                  onEditingComplete: (){
-//                    FocusScope.of(context).requestFocus(shit6);
-//                  },
-//                  focusNode: shit5,
-//                  textInputAction: TextInputAction.next
-//              ),
               const SizedBox(height: 10.0,),
               _Input(null, template[5], shit6, shit7),
-//              TextFormField(
-//                decoration: InputDecoration(
-//                    labelText: template[5]
-//                ),
-//                onChanged: (String str){
-//                  customerDetail.add(str);
-//                },
-//                  onEditingComplete: (){
-//                    FocusScope.of(context).requestFocus(shit7);
-//                  },
-//                  focusNode: shit6,
-//                  textInputAction: TextInputAction.next
-//              ),
               const SizedBox(height: 10.0,),
               _Input(null, template[6], shit7, shit8),
-//              TextFormField(
-//                decoration: InputDecoration(
-//                    labelText: template[6]
-//                ),
-//                onChanged: (String str){
-//                  customerDetail.add(str);
-//                },
-//                  focusNode: shit7,
-//                  onEditingComplete: (){
-//                    FocusScope.of(context).requestFocus(shit8);
-//                  },
-//                  textInputAction: TextInputAction.next
-//              ),
               const SizedBox(height: 10.0,),
               TextFormField(
                 decoration: InputDecoration(
@@ -176,6 +100,7 @@ class _MeasurementFormState extends State<MeasurementForm> {
   }
 }
 
+//The input form that was shown in add page or edit page
 class _Input extends StatelessWidget {
 
   final TextEditingController _controller;
