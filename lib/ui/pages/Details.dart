@@ -25,7 +25,17 @@ class _ShowDetailState extends State<ShowDetail> {
           itemCount: template.length,
           itemBuilder: (context,index){
             return Card(
-                child: Text(template[index])
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Text(
+                      template[index]
+                    ),
+                    Text(
+                      'Random Something'
+                    )
+                  ],
+                )
             );
 
           })

@@ -26,7 +26,7 @@ class _HomePageState extends State<HomePage> {
             onPressed: () {
               Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => MeasurementForm()));
+                  MaterialPageRoute(builder: (context) => MeasurementForm(Mode.add, null)));
               },
             icon :Icon(Icons.add, color: Colors.white),
 
@@ -42,11 +42,16 @@ class _HomePageState extends State<HomePage> {
                 children: <Widget>[
                   const SizedBox(height: 8.0,),
                   GestureDetector(
+                    onHorizontalDragStart: (_){
+                      setState(() {
+                        _notes.removeAt(index);
+                      });
+                    },
                     child: Container(
                       margin: EdgeInsets.symmetric(horizontal: 8.0 , vertical: 4.0),
                       decoration: BoxDecoration(
                         color: Colors.cyan,
-                        borderRadius: BorderRadius.circular(10.0)
+                        borderRadius: BorderRadius.circular(10.0),
                       ),
                       padding: EdgeInsets.symmetric(vertical: 10.0),
                       child: ListTile(
@@ -58,7 +63,7 @@ class _HomePageState extends State<HomePage> {
                         onLongPress: (){
                           Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => MeasurementForm()));
+                              MaterialPageRoute(builder: (context) => MeasurementForm(Mode.edit,index)));
                         },
                         title: Column(
                           children: <Widget>[
@@ -71,7 +76,7 @@ class _HomePageState extends State<HomePage> {
                             Text(
                               _notes[index]['Phone No.'],
                               style: TextStyle(
-                                  color: Colors.grey,
+                                  color: Colors.white,
                                   fontSize: 15.0
                               ))
                           ],
@@ -88,6 +93,15 @@ class _HomePageState extends State<HomePage> {
                     fontSize: 20.0
                   ),),
                 ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.cyan,
+        onPressed: (){
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => MeasurementForm(Mode.add, null)));
+          },
+          child: Icon(Icons.person_add, color: Colors.black,),
+      ),
     );
   }
 }

@@ -5,27 +5,7 @@ class DetailInheritedWidget extends InheritedWidget{
   final notes = [
     {
       'Name':'Sushan',
-      'Phone No.':'flsjflk',
-      'Length':'',
-      'Hip':'',
-      'Height':'',
-      'Front':'',
-      'Back':'',
-      'Up':''
-    },
-    {
-      'Name':'Sakshyam',
-      'Phone No.':'',
-      'Length':'',
-      'Hip':'',
-      'Height':'',
-      'Front':'',
-      'Back':'',
-      'Up':''
-    },
-    {
-      'Name':'LOL',
-      'Phone No.':'',
+      'Phone No.':'9823535417',
       'Length':'',
       'Hip':'',
       'Height':'',
@@ -33,7 +13,6 @@ class DetailInheritedWidget extends InheritedWidget{
       'Back':'',
       'Up':''
     }
-
   ];
 
   DetailInheritedWidget(Widget child) : super(child: child);

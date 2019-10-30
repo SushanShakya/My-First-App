@@ -2,27 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/ui/pages/InheritedWidget/NoteInherit.dart';
 
 //  For Future improvements
-//enum Mode{
-//  edit,
-//  add
-//}
+enum Mode{
+  edit,
+  add
+}
 
 class MeasurementForm extends StatefulWidget{
 
-//  final Mode _noteMode;
-//  final int index;
-//  MeasurementForm(this.index);
-//    Old Code style
-//  final String title;
-//  MeasurementForm({this.title});
+  final Mode mode;
+  final int index;
+  MeasurementForm(this.mode,this.index);
+
+
   @override
   _MeasurementFormState createState() => _MeasurementFormState();
 }
 
 class _MeasurementFormState extends State<MeasurementForm> {
 
-//  Don't think will be requiring this code here
-//  List customerDetail = [];
   List<Map<String, String>> get _notes => DetailInheritedWidget.of(context).notes;
   List template = ['Name', 'Phone No.','Length', 'Hip', 'Height', 'Front', 'Back', 'Up'];//Created a list instead of hardcoding the strings
   TextEditingController _name = new TextEditingController();
@@ -41,50 +38,58 @@ class _MeasurementFormState extends State<MeasurementForm> {
   final FocusNode shit7 = new FocusNode();
   final FocusNode shit8 = new FocusNode();
 
-//    Old code style
-
-//  @override
-//  void initState() {
-//    super.initState();
-//    _name = TextEditingController(text: widget.title != null? widget.title: "");
-//  }
-
-
 //    For the purpose of displaying the text when edited
-//  @override
-//  void didChangeDependencies() {
-//    _name.text = _notes[widget.index]['Name'];
-//    _phoneNo.text = _notes[widget.index]['Phone No.'];
-//    _length.text = _notes[widget.index]['Length'];
-//    _hip.text = _notes[widget.index]['Hip'];
-//    _height.text = _notes[widget.index]['Height'];
-//    _front.text = _notes[widget.index]['Front'];
-//    _back.text = _notes[widget.index]['Back'];
-//    _up.text = _notes[widget.index]['Up'];
-//    super.didChangeDependencies();
-//  }
+  @override
+  void didChangeDependencies() {
+    if(widget.mode == Mode.edit) {
+      _name.text = _notes[widget.index]['Name'];
+      _phoneNo.text = _notes[widget.index]['Phone No.'];
+      _length.text = _notes[widget.index]['Length'];
+      _hip.text = _notes[widget.index]['Hip'];
+      _height.text = _notes[widget.index]['Height'];
+      _front.text = _notes[widget.index]['Front'];
+      _back.text = _notes[widget.index]['Back'];
+      _up.text = _notes[widget.index]['Up'];
+    }
+    super.didChangeDependencies();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         elevation: 0.0,
-        title: Text("Add New"),
+        title: Text(
+            widget.mode == Mode.add ?"Add New" : "Edit"
+        ),
         actions: <Widget>[
           FlatButton(
               textColor: Colors.black ,
               onPressed: (){
                 /*When the "Save" button is pressed the
                  details are added to the map*/
-                _notes.add({
-                  'Name'      :_name.text,
-                  'Phone No.' :_phoneNo.text,
-                  'Length'    :_length.text,
-                  'Hip'       :_hip.text,
-                  'Height'    :_height.text,
-                  'Front'     :_front.text,
-                  'Back'      :_back.text,
-                  'Up'        :_up.text
-                });
+                if(widget.mode == Mode.add){
+                  _notes.add({
+                    'Name'      :_name.text,
+                    'Phone No.' :_phoneNo.text,
+                    'Length'    :_length.text,
+                    'Hip'       :_hip.text,
+                    'Height'    :_height.text,
+                    'Front'     :_front.text,
+                    'Back'      :_back.text,
+                    'Up'        :_up.text
+                });//Notes.add
+                }else if(widget.mode == Mode.edit){
+                  _notes[widget.index] = {
+                    'Name':_name.text,
+                    'Phone No.':_phoneNo.text ,
+                    'Length':_length.text,
+                    'Hip':_hip.text,
+                    'Height':_height.text,
+                    'Front':_front.text,
+                    'Back':_back.text,
+                    'Up':_up.text
+                  };
+                }
                 Navigator.pop(context, _name.text.toString());
               },
               child: Text("Save"),
