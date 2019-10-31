@@ -22,6 +22,7 @@ class _HomePageState extends State<HomePage> {
         elevation: 0.0,
         title: Text(
           "Tailor\'s Notes",
+          textAlign: TextAlign.center,
           style: TextStyle(
             fontSize: 22.0,
               fontWeight: FontWeight.w600,

@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/ui/pages/InheritedWidget/NoteInherit.dart';
 
@@ -19,6 +20,7 @@ class _ShowDetailState extends State<ShowDetail> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           const SizedBox(height: kToolbarHeight,),
           Text(

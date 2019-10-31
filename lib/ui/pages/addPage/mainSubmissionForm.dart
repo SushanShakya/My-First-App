@@ -59,7 +59,8 @@ class _MeasurementFormState extends State<MeasurementForm> {
       appBar: AppBar(
         elevation: 0.0,
         title: Text(
-            widget.mode == Mode.add ?"Add New" : "Edit"
+            widget.mode == Mode.add ?"Add New" : "Edit",
+          textAlign: TextAlign.center,
         ),
         actions: <Widget>[
           FlatButton(

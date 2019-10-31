@@ -12,17 +12,8 @@ class Welcome extends StatelessWidget{
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
+
               const SizedBox(height: kToolbarHeight,),
-              Container(
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  shape: BoxShape.circle
-                ),
-                width: 100.0,
-                height: 100.0,
-                child: Image(),
-              ),
-              const SizedBox(height: 25.0,),
               Text(
                   'Welcome',
                   textAlign: TextAlign.center,
@@ -30,6 +21,19 @@ class Welcome extends StatelessWidget{
                   color: Colors.cyan,
                   fontSize: 50.0,
                   fontWeight: FontWeight.bold
+                ),
+              ),
+              const SizedBox(height: 15.0,),
+              Container(
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    shape: BoxShape.circle
+                ),
+                width: 150.0,
+                height: 150.0,
+                child: Padding(
+                  padding: const EdgeInsets.all(30.0),
+                  child: Image(image: AssetImage('asset/images/sewing-machine.png')),
                 ),
               ),
               const SizedBox(height: 15.0,),
