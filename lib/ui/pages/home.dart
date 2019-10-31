@@ -41,7 +41,7 @@ class _HomePageState extends State<HomePage> {
                 children: <Widget>[
                   const SizedBox(height: 8.0,),
                   GestureDetector(
-                    onHorizontalDragStart: (_){
+                    onHorizontalDragDown: (_){
                       setState(() {
                         _notes.removeAt(index);
                       });
@@ -93,13 +93,13 @@ class _HomePageState extends State<HomePage> {
                   ),),
                 ),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.cyan,
+        backgroundColor: Colors.indigo,
         onPressed: (){
             Navigator.push(
               context,
               MaterialPageRoute(builder: (context) => MeasurementForm(Mode.add, null)));
           },
-          child: Icon(Icons.person_add, color: Colors.black,),
+          child: Icon(Icons.person_add, color: Colors.white,),
       ),
     );
   }
