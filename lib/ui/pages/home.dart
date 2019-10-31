@@ -1,5 +1,4 @@
 
-//import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/ui/pages/Details.dart';
 import 'package:flutter_app/ui/pages/InheritedWidget/NoteInherit.dart';
