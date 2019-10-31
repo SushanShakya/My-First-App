@@ -5,11 +5,12 @@ class Welcome extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blueAccent,
+      backgroundColor: Colors.indigo,
       body: SingleChildScrollView(
         child: SizedBox(
           width: double.infinity,
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               const SizedBox(height: kToolbarHeight,),
               Container(
@@ -19,13 +20,14 @@ class Welcome extends StatelessWidget{
                 ),
                 width: 100.0,
                 height: 100.0,
+                child: Image(),
               ),
               const SizedBox(height: 25.0,),
               Text(
                   'Welcome',
                   textAlign: TextAlign.center,
                 style: TextStyle(
-                  color: Colors.lightGreenAccent,
+                  color: Colors.cyan,
                   fontSize: 50.0,
                   fontWeight: FontWeight.bold
                 ),
@@ -44,13 +46,14 @@ class Welcome extends StatelessWidget{
                     ),
                     children: <TextSpan>[
                       new TextSpan(
-                          text: 'Warning !! : ',
+                          text: 'Warning !! ',
                           style: new TextStyle(
-                            fontWeight: FontWeight.bold
+                            fontWeight: FontWeight.bold,
+                            color: Colors.red
                           )
                       ),
                       new TextSpan(
-                          text: 'This is the alpha version of the app. '
+                          text: ': This is the alpha version of the app. '
                               'So if things were to go wrong, the Dev. is sorry.',
 
                       ),
@@ -59,11 +62,11 @@ class Welcome extends StatelessWidget{
                 )
               ),
               const SizedBox(height: 30.0,),
-              OutlineButton(
-                highlightColor: Colors.tealAccent,
-                borderSide: BorderSide(color: Colors.lightGreenAccent),
+              FlatButton(
+                color: Colors.teal,
+                highlightColor: Colors.cyan,
                 padding: EdgeInsets.symmetric(vertical: 15.0, horizontal: 30.0),
-                textColor: Colors.lightGreenAccent,
+                textColor: Colors.white,
                 child: Text(
                   "Continue",
                   style: new TextStyle(
@@ -71,7 +74,6 @@ class Welcome extends StatelessWidget{
                   ),
                 ),
                 onPressed: (){
-//                  continueToHomePage(context);
                   Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
                 },
               )
@@ -84,6 +86,3 @@ class Welcome extends StatelessWidget{
 
 }
 
-//Future continueToHomePage(context) async {
-//  Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
-//}

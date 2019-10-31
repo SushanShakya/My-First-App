@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/ui/pages/InheritedWidget/NoteInherit.dart';
 import 'ui/pages/Welcome/welcome.dart';
 //import 'ui/pages/home.dart';
+//import 'ui/pages/home.dart';
 
 void main() => runApp(MyApp());
 

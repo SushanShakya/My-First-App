@@ -12,33 +12,49 @@ class ShowDetail extends StatefulWidget {
 
 class _ShowDetailState extends State<ShowDetail> {
 
-  //List<Map<String, String>> get _notes => DetailInheritedWidget.of(context).notes;
-  List template = ['Name', 'Phone No.','Length', 'Hip', 'Height', 'Front', 'Back', 'Up'];//Created a list instead of hardcoding the strings
+  List<Map<String, String>> get _notes => DetailInheritedWidget.of(context).notes;
+  List template = ['Length', 'Hip', 'Height', 'Front', 'Back', 'Up'];//Created a list instead of hardcoding the strings
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: Colors.white
+    return Scaffold(
+      body: Column(
+        children: <Widget>[
+          const SizedBox(height: kToolbarHeight,),
+          Text(
+              _notes[widget.index]['Name'],
+            style: TextStyle(
+              fontSize: 30.0,
+              fontWeight: FontWeight.bold
+            ),
+          ),
+          Text(
+              _notes[widget.index]['Phone No.'],
+              style: TextStyle(
+                  color: Colors.indigo,
+                  fontSize: 15.0
+              )
+          ),
+          SingleChildScrollView(
+            child: DataTable(
+                columns: [
+                  DataColumn(label: Text("Kurtha")),
+                  DataColumn(label: Text(" ")),
+                ],
+                rows: [
+                  DataRow(cells: [
+                    DataCell(Text(template[0])),
+                    DataCell(Text(_notes[widget.index]['Length']))
+                  ]),
+                  DataRow(cells: [
+                    DataCell(Text(template[1])),
+                    DataCell(Text(_notes[widget.index]['Hip']))
+                  ]),
+                ]
+            ),
+          )
+        ],
       ),
-      child: ListView.builder(
-          itemCount: template.length,
-          itemBuilder: (context,index){
-            return Card(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Text(
-                      template[index]
-                    ),
-                    Text(
-                      'Random Something'
-                    )
-                  ],
-                )
-            );
-
-          })
     );
   }
 }

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/ui/pages/InheritedWidget/NoteInherit.dart';
 
-//  For Future improvements
+//  To define if the page is for adding or editing
 enum Mode{
   edit,
   add

@@ -6,8 +6,8 @@ class DetailInheritedWidget extends InheritedWidget{
     {
       'Name':'Sushan',
       'Phone No.':'9823535417',
-      'Length':'',
-      'Hip':'',
+      'Length':'This is shit',
+      'Hip':'Hell',
       'Height':'',
       'Front':'',
       'Back':'',
