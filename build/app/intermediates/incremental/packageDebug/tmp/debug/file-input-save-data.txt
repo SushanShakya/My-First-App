@@ -1,6 +1,7 @@
 #Internal package file, do not edit.
-#Thu Oct 31 22:37:33 NPT 2019
+#Fri Nov 01 08:43:45 NPT 2019
 4.path=flutter_assets/FontManifest.json
+13.baseType=DIRECTORY
 8.set=NATIVE_RESOURCE
 6.path=flutter_assets/asset/images/sewing-machine.png
 0.baseType=DIRECTORY
@@ -8,13 +9,14 @@
 5.baseType=DIRECTORY
 1.base=F\:\\App\\Tailor's Notes\\build\\app\\intermediates\\merged_assets\\debug\\mergeDebugAssets\\out
 8.path=lib/x86/libflutter.so
-12.path=lib/x86_64/libflutter.so
+12.path=flutter_assets/kernel_blob.bin
 3.base=F\:\\App\\Tailor's Notes\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\0
 4.set=ASSET
 5.base=F\:\\App\\Tailor's Notes\\build\\app\\intermediates\\merged_assets\\debug\\mergeDebugAssets\\out
 7.base=F\:\\App\\Tailor's Notes\\build\\app\\intermediates\\transforms\\mergeJniLibs\\debug\\0
 11.base=F\:\\App\\Tailor's Notes\\build\\app\\intermediates\\merged_assets\\debug\\mergeDebugAssets\\out
 9.base=F\:\\App\\Tailor's Notes\\build\\app\\intermediates\\merged_assets\\debug\\mergeDebugAssets\\out
+13.base=F\:\\App\\Tailor's Notes\\build\\app\\intermediates\\transforms\\mergeJniLibs\\debug\\0
 1.baseType=DIRECTORY
 11.set=ASSET
 0.set=ASSET
@@ -30,26 +32,28 @@
 5.path=flutter_assets/vm_snapshot_data
 0.base=F\:\\App\\Tailor's Notes\\build\\app\\intermediates\\merged_assets\\debug\\mergeDebugAssets\\out
 7.path=lib/armeabi-v7a/libflutter.so
-11.path=flutter_assets/kernel_blob.bin
+11.path=flutter_assets/asset/images/icon.png
 9.path=flutter_assets/AssetManifest.json
 6.set=ASSET
 2.base=F\:\\App\\Tailor's Notes\\build\\app\\intermediates\\merged_assets\\debug\\mergeDebugAssets\\out
+13.path=lib/x86_64/libflutter.so
 11.baseType=DIRECTORY
 4.base=F\:\\App\\Tailor's Notes\\build\\app\\intermediates\\merged_assets\\debug\\mergeDebugAssets\\out
 3.baseType=DIRECTORY
 6.base=F\:\\App\\Tailor's Notes\\build\\app\\intermediates\\merged_assets\\debug\\mergeDebugAssets\\out
 10.base=F\:\\App\\Tailor's Notes\\build\\app\\intermediates\\merged_assets\\debug\\mergeDebugAssets\\out
+13.set=NATIVE_RESOURCE
 8.base=F\:\\App\\Tailor's Notes\\build\\app\\intermediates\\transforms\\mergeJniLibs\\debug\\0
 2.set=ASSET
 8.baseType=DIRECTORY
-12.base=F\:\\App\\Tailor's Notes\\build\\app\\intermediates\\transforms\\mergeJniLibs\\debug\\0
+12.base=F\:\\App\\Tailor's Notes\\build\\app\\intermediates\\merged_assets\\debug\\mergeDebugAssets\\out
 9.set=ASSET
-count=13
+count=14
 12.baseType=DIRECTORY
 4.baseType=DIRECTORY
 5.set=ASSET
 9.baseType=DIRECTORY
 0.path=flutter_assets/LICENSE
-12.set=NATIVE_RESOURCE
+12.set=ASSET
 1.set=ASSET
 2.path=flutter_assets/isolate_snapshot_data

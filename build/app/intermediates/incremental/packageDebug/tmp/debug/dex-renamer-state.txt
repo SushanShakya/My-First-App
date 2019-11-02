@@ -1,4 +1,4 @@
-#Thu Oct 31 22:37:27 NPT 2019
+#Fri Nov 01 08:43:40 NPT 2019
 base.0=F\:\\App\\Tailor's Notes\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\0
 path.0=classes.dex
 renamed.0=classes.dex

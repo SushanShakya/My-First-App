@@ -23,7 +23,7 @@ class Welcome extends StatelessWidget{
                   fontWeight: FontWeight.bold
                 ),
               ),
-              const SizedBox(height: 15.0,),
+              const SizedBox(height: 5.0,),
               Container(
                 decoration: BoxDecoration(
                     color: Colors.white,
@@ -32,7 +32,7 @@ class Welcome extends StatelessWidget{
                 width: 150.0,
                 height: 150.0,
                 child: Padding(
-                  padding: const EdgeInsets.all(30.0),
+                  padding: const EdgeInsets.all(22.0),
                   child: Image(image: AssetImage('asset/images/sewing-machine.png')),
                 ),
               ),

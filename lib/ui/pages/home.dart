@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 //import 'package:flutter_app/ui/DatabaseHelper.dart';
 import 'package:flutter_app/ui/pages/Details.dart';
 import 'package:flutter_app/ui/pages/InheritedWidget/NoteInherit.dart';
+import 'package:flutter_app/ui/pages/about.dart';
+//import 'package:flutter_app/ui/pages/about.dart';
 import 'package:flutter_app/ui/pages/addPage/mainSubmissionForm.dart';
 
 class HomePage extends StatefulWidget{
@@ -28,11 +30,24 @@ class _HomePageState extends State<HomePage> {
               fontWeight: FontWeight.w600,
           ),),
         actions: <Widget>[
-          IconButton(
-            onPressed: () {},
-            icon :Icon(Icons.android, color: Colors.cyan),
-
-          ),
+//          IconButton(
+//            onPressed: () { Navigator.push(
+//                context,
+//                MaterialPageRoute(builder: (context) =>About()));},
+//            icon :Icon(Icons.android, color: Colors.cyan),
+      Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 5),
+        child: Hero(
+            tag: 'measure',
+            child: GestureDetector(
+              onTap:() {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => About()));
+              },
+              child: Image(image: AssetImage('asset/images/icon.png'),height: 20.0,width: 30.0,)
+            )
+        ),
+      )
+//          ),
         ],
       ),
       body:
