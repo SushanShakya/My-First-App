@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/ui/pages/InheritedWidget/NoteInherit.dart';
 import 'ui/pages/Welcome/welcome.dart';
-//import 'ui/pages/home.dart';
-//import 'ui/pages/home.dart';
 
 void main() => runApp(MyApp());
 
@@ -10,8 +7,7 @@ void main() => runApp(MyApp());
 class MyApp extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
-    return DetailInheritedWidget(
-      MaterialApp(
+    return MaterialApp(
         title: 'Tailor\'s App',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
@@ -33,7 +29,6 @@ class MyApp extends StatelessWidget{
           )
         ),
         home: Welcome(),
-      ),
-    );
+      );
   }
 }
