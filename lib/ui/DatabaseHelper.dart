@@ -6,7 +6,7 @@ class NoteProvider {
 
   static Future open() async {
     db = await openDatabase(
-      join(await getDatabasesPath(), 'DATA.db'),
+      join(await getDatabasesPath(), 'newData.db'),
       version: 1,
       onCreate: (Database db, int version) async {
         db.execute('''
@@ -14,6 +14,7 @@ class NoteProvider {
             id integer primary key autoincrement,
             title text not null,
             text text not null,
+            address text,
             length text,
             chest text,
             waist text,
@@ -28,7 +29,11 @@ class NoteProvider {
             S_length text,
             S_breadth text,
             S_knee text,
-            neck_Design text
+            neck_Design text,
+            delivery_Date text,
+            color text,
+            systemDate text,
+            surwalDesign text 
           );
         ''');
       }

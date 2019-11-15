@@ -1,4 +1,4 @@
-#Wed Nov 13 10:20:45 NPT 2019
+#Fri Nov 15 14:21:42 NPT 2019
 base.0=E\:\\flutter_workspace\\My-First-App\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\0
 path.0=classes.dex
 renamed.0=classes.dex

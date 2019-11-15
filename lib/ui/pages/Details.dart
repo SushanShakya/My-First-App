@@ -13,17 +13,21 @@ class ShowDetail extends StatefulWidget {
 
 class _ShowDetailState extends State<ShowDetail> {
 
+  Color titleColor = Colors.deepPurple;
+  Color subTitleColor = Colors.cyan;
   //List of what to display in the database
   List template = [
     'Length',
     'Chest', 'Waist', 'Hip',
     'Sholder', 'Chirne','Pher',
-    'Back_Length','Back_Breadth','Front_Neck',
-    'Back_Neck','S_Length','S_Breadth',
+    'Baula_Length','Baula_Breadth','Front_Neck',
+    'Baula_Neck','S_Length','S_Breadth',
     'S_Knee','NeckDesign'
   ];
   @override
   Widget build(BuildContext context) {
+    var deliveryDate = widget.index['delivery_Date'];
+    var now = widget.index['systemDate'];
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -34,17 +38,55 @@ class _ShowDetailState extends State<ShowDetail> {
                 widget.index['title'],
               style: TextStyle(
                 fontSize: 30.0,
-                fontWeight: FontWeight.bold
+                fontWeight: FontWeight.bold,
+                color: Colors.red
               ),
               textAlign: TextAlign.center,
             ),
             Text(
                 widget.index['text'],
                 style: TextStyle(
-                    color: Colors.indigo,
-                    fontSize: 15.0
+                    color: subTitleColor,
+                    fontSize: 17.0
                 ),
                 textAlign: TextAlign.center,
+            ),
+            Text(
+              widget.index['address'],
+              style: TextStyle(
+                  color: subTitleColor,
+                  fontSize: 17.0
+              ),
+              textAlign: TextAlign.center,
+            ),
+            Text(
+              widget.index['color'],
+              style: TextStyle(
+                  color: subTitleColor,
+                  fontSize: 17.0
+              ),
+              textAlign: TextAlign.center,
+            ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(0,10,20,0),
+              child: Text(
+                'Created Date : $now',
+                style: TextStyle(
+                    fontSize: 13.0,
+                ),
+                textAlign: TextAlign.right,
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(0,0,20,0),
+              child: Text(
+                'Delivery Date : $deliveryDate',
+                style: TextStyle(
+                    color: Colors.red,
+                    fontSize: 13.0,
+                ),
+                textAlign: TextAlign.right,
+              ),
             ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -53,7 +95,7 @@ class _ShowDetailState extends State<ShowDetail> {
                     padding: const EdgeInsets.all(10.0),
                     child: DataTable(
                         columns: [
-                          DataColumn(label: Text("Kurtha", style: TextStyle(fontSize: 20,color: Colors.indigo),)),
+                          DataColumn(label: Text("Kurtha", style: TextStyle(fontSize: 20,color: titleColor),)),
                           DataColumn(label: Text("")),
                         ],
                         rows: [
@@ -108,7 +150,7 @@ class _ShowDetailState extends State<ShowDetail> {
                     padding: const EdgeInsets.all(10.0),
                     child: DataTable(
                         columns: [
-                          DataColumn(label: Text("Surwal", style: TextStyle(fontSize: 20,color: Colors.indigo),)),
+                          DataColumn(label: Text("Surwal", style: TextStyle(fontSize: 20,color: titleColor),)),
                           DataColumn(label: Text(" ")),
                         ],
                         rows: [
@@ -125,9 +167,14 @@ class _ShowDetailState extends State<ShowDetail> {
                             DataCell(Text(widget.index['S_knee']))
                           ]),
                           DataRow(cells: [
-                            DataCell(Text(template[14], style: TextStyle(fontSize: 20.0,color: Colors.indigo,fontWeight: FontWeight.bold),)),
+                            DataCell(Text("Surwal Design", style: TextStyle(fontSize: 19.0,color: titleColor),)),
+                            DataCell(Text(widget.index['surwalDesign']))
+                          ]),
+                          DataRow(cells: [
+                            DataCell(Text(template[14], style: TextStyle(fontSize: 19.0,color: titleColor),)),
                             DataCell(Text(widget.index['neck_Design']))
                           ]),
+
                         ]
                     ),
                   )

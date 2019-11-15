@@ -3,6 +3,7 @@ import '../DatabaseHelper.dart';
 import 'Details.dart';
 import 'addPage/mainSubmissionForm.dart';
 
+
 class NoteList extends StatefulWidget {
 
   @override
@@ -33,6 +34,7 @@ class NoteListState extends State<NoteList> {
             final notes = snapshot.data;
             return ListView.builder(
               itemBuilder: (context, index) {
+//                final deliveryDate = notes[index]['delivery_Date'];
                 return GestureDetector(
                   onTap: () {
                     Navigator.push(
@@ -63,14 +65,15 @@ class NoteListState extends State<NoteList> {
                               children: <Widget>[
                                 _NoteTitle(notes[index]['title']),
                                 Container(height: 4,),
-                                _NoteText(notes[index]['text'])
+                                _NoteText(notes[index]['text']),
+//                                const SizedBox(height: 4,),
+//                                _NoteText("Delivery : $deliveryDate")
                               ],
                             ),
                           ),
 
                       ),
                     ),
-//                  ),
                 );
               },
               itemCount: notes.length,
