@@ -8,12 +8,40 @@
         "source": "E:\\flutter_workspace\\My-First-App\\android\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
     },
     {
+        "merged": "E:\\flutter_workspace\\My-First-App\\build\\app\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_icon.png.flat",
+        "source": "E:\\flutter_workspace\\My-First-App\\android\\app\\src\\main\\res\\mipmap-xxxhdpi\\icon.png"
+    },
+    {
+        "merged": "E:\\flutter_workspace\\My-First-App\\build\\app\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_icon.png.flat",
+        "source": "E:\\flutter_workspace\\My-First-App\\android\\app\\src\\main\\res\\mipmap-xxhdpi\\icon.png"
+    },
+    {
+        "merged": "E:\\flutter_workspace\\My-First-App\\build\\app\\intermediates\\res\\merged\\debug\\mipmap-hdpi_dressmaker.png.flat",
+        "source": "E:\\flutter_workspace\\My-First-App\\android\\app\\src\\main\\res\\mipmap-hdpi\\dressmaker.png"
+    },
+    {
+        "merged": "E:\\flutter_workspace\\My-First-App\\build\\app\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_dressmaker.png.flat",
+        "source": "E:\\flutter_workspace\\My-First-App\\android\\app\\src\\main\\res\\mipmap-xhdpi\\dressmaker.png"
+    },
+    {
+        "merged": "E:\\flutter_workspace\\My-First-App\\build\\app\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_dressmaker.png.flat",
+        "source": "E:\\flutter_workspace\\My-First-App\\android\\app\\src\\main\\res\\mipmap-xxxhdpi\\dressmaker.png"
+    },
+    {
+        "merged": "E:\\flutter_workspace\\My-First-App\\build\\app\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_dressmaker.png.flat",
+        "source": "E:\\flutter_workspace\\My-First-App\\android\\app\\src\\main\\res\\mipmap-xxhdpi\\dressmaker.png"
+    },
+    {
         "merged": "E:\\flutter_workspace\\My-First-App\\build\\app\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
         "source": "E:\\flutter_workspace\\My-First-App\\android\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
     },
     {
         "merged": "E:\\flutter_workspace\\My-First-App\\build\\app\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher.png.flat",
         "source": "E:\\flutter_workspace\\My-First-App\\android\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "E:\\flutter_workspace\\My-First-App\\build\\app\\intermediates\\res\\merged\\debug\\mipmap-mdpi_dressmaker.png.flat",
+        "source": "E:\\flutter_workspace\\My-First-App\\android\\app\\src\\main\\res\\mipmap-mdpi\\dressmaker.png"
     },
     {
         "merged": "E:\\flutter_workspace\\My-First-App\\build\\app\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",

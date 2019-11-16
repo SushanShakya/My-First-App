@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../DatabaseHelper.dart';
+import 'package:flutter/services.dart';
 
 enum NoteMode {
   Editing,
@@ -126,6 +127,7 @@ class NoteState extends State<Note> {
         title: Text(
           widget.noteMode == NoteMode.Adding ? 'New Entry' : 'Edit Entry'
         ),
+        centerTitle: true,
         actions: <Widget>[
           _NoteButton('Save', Colors.indigo, () {
 
@@ -272,35 +274,35 @@ class NoteState extends State<Note> {
                 const SizedBox(height: 10.0,),
                 Text("Kurtha", style: TextStyle(fontSize: 18.0),textAlign: TextAlign.left,), //UI part
                 const SizedBox(height: 5.0,),
-                _Input(_length, template[2], shit3, shit4, TextInputType.number),
+                _Input(_length, template[2], shit3, shit4, TextInputType.numberWithOptions(decimal: true)),
                 const SizedBox(height: 10.0,),
-                _Input(_hip, template[3], shit4, shit5, TextInputType.number),
+                _Input(_hip, template[3], shit4, shit5, TextInputType.numberWithOptions(decimal: true)),
                 const SizedBox(height: 10.0,),
-                _Input(_chest, template[4], shit5, shit6, TextInputType.number),
+                _Input(_chest, template[4], shit5, shit6, TextInputType.numberWithOptions(decimal: true)),
                 const SizedBox(height: 10.0,),
-                _Input(_waist, template[5], shit6, shit7, TextInputType.number),
+                _Input(_waist, template[5], shit6, shit7, TextInputType.numberWithOptions(decimal: true)),
                 const SizedBox(height: 10.0,),
-                _Input(_sholder, template[6], shit7, shit8, TextInputType.number),
+                _Input(_sholder, template[6], shit7, shit8, TextInputType.numberWithOptions(decimal: true)),
                 const SizedBox(height: 10.0,),
                 _Input(_chirne, template[7], shit8, shit9, TextInputType.text),
                 const SizedBox(height: 10.0,),
                 _Input(_pher, template[8], shit9, shit10, TextInputType.text),
                 const SizedBox(height: 10.0,),
-                _Input(_blength, template[9], shit10, shit11, TextInputType.number),
+                _Input(_blength, template[9], shit10, shit11, TextInputType.numberWithOptions(decimal: true)),
                 const SizedBox(height: 10.0,),
-                _Input(_bbreadth, template[10], shit11, shit12, TextInputType.number),
+                _Input(_bbreadth, template[10], shit11, shit12, TextInputType.numberWithOptions(decimal: true)),
                 const SizedBox(height: 10.0,),
-                _Input(_fneck, template[11], shit12, shit13, TextInputType.number),
+                _Input(_fneck, template[11], shit12, shit13, TextInputType.numberWithOptions(decimal: true)),
                 const SizedBox(height: 10.0,),
-                _Input(_bneck, template[12], shit13, shit14, TextInputType.number),
+                _Input(_bneck, template[12], shit13, shit14, TextInputType.numberWithOptions(decimal: true)),
                 const SizedBox(height: 10.0,),
                 Text("Surwal", style: TextStyle(fontSize: 18.0),textAlign: TextAlign.left,), //UI part
                 const SizedBox(height: 5.0,),
-                _Input(_slength, template[13], shit14, shit15, TextInputType.number),
+                _Input(_slength, template[13], shit14, shit15, TextInputType.numberWithOptions(decimal: true)),
                 const SizedBox(height: 10.0,),
-                _Input(_sbreadth, template[14], shit15, shit16, TextInputType.number),
+                _Input(_sbreadth, template[14], shit15, shit16, TextInputType.numberWithOptions(decimal: true)),
                 const SizedBox(height: 10.0,),
-                _Input(_sknee, template[15], shit16, shit17, TextInputType.number),
+                _Input(_sknee, template[15], shit16, shit17, TextInputType.numberWithOptions(decimal: true)),
                 const SizedBox(height: 10.0,),
                 TextField(
                   controller: _neckDesign,

@@ -1,4 +1,6 @@
 com.collections.flutter_app
 drawable launch_background
+mipmap dressmaker
 mipmap ic_launcher
+mipmap icon
 style LaunchTheme

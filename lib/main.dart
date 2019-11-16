@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'ui/pages/Welcome/welcome.dart';
+import 'package:flutter_app/ui/pages/home.dart';
 
 
 
@@ -30,7 +29,7 @@ class App extends StatelessWidget {
                 )
             )
         ),
-        home: Welcome(),
+        home: NoteList(),
       );
   }
 }
